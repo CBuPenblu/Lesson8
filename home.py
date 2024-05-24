@@ -93,3 +93,28 @@ battle(fighter, monster)
 
 fighter.change_weapon(Axe())
 battle(fighter, monster)
+
+
+#Вот эту логику:
+#self.health -= damage
+#if self.health > 0:
+#return(f"{self.name} got {damage} damage, health: {self.health}")
+#else:
+#return(f"{self.name} defeated!")
+
+#Можно вынести в @property.setter декоратор здоровья.
+#Условно, делаем при инициализации приватный атрибут self._health = 100.
+#Затем, пишем:
+#@property
+#def health(self):
+#return self._health
+
+#И условия переназначения:
+#@health.setter
+#def health(self):
+#if self._health > 0:
+#return(f"{self.name} got {damage} damage, health: {self.health}")
+#else:
+#return(f"{self.name} defeated!")
+
+#Таким образом, каждый раз, когда атрибут .health будет переназначаться или изменяться - проверка будет автоматической.
